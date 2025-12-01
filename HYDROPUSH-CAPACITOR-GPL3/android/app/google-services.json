@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "982342652078",
+    "project_id": "hydropush-app-firebase",
+    "storage_bucket": "hydropush-app-firebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982342652078:android:cb02d148c2faf94fca5d3f",
+        "android_client_info": {
+          "package_name": "com.company.hydropush"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArz0StKkYOSSAySS8vux6omM_GiMuU9aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982342652078:android:c868148cbee438a8ca5d3f",
+        "android_client_info": {
+          "package_name": "com.hydropush.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArz0StKkYOSSAySS8vux6omM_GiMuU9aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

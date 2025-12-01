@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "composite": true, // Obrigatório para tsconfig de referência
+    "declaration": true, // Gera .d.ts, necessário para composite
+    "declarationMap": true, // Map para .d.ts
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false, // Precisa permitir emit para ser composite
+    "jsx": "react-jsx" // Suporte para JSX/TSX
+  },
+  "include": [
+    "src/**/*", // Inclui todos os arquivos do src
+    "src/vite-env.d.ts" // Inclui declarações de tipo para imagens
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "android",
+    "ios"
+  ]
+}

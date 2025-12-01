@@ -1,0 +1,25 @@
+// Top-level build file
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.1'
+
+    }
+}
+
+// ISTO É CRUCIAL: Carrega as variáveis para o projeto todo
+apply from: 'variables.gradle'
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

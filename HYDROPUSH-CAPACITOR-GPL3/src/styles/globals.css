@@ -1,0 +1,651 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Aumentado para melhor legibilidade mobile */
+  --background: #ffffff;
+  --foreground: #0F1724;
+  --card: #ffffff;
+  --card-foreground: #0F1724;
+  --popover: #ffffff;
+  --popover-foreground: #0F1724;
+  --primary: #1E88E5;
+  --primary-foreground: #ffffff;
+  --secondary: #42A5F5;
+  --secondary-foreground: #ffffff;
+  --muted: #E5E7EB;
+  --muted-foreground: #374151;
+  --accent: #00B894;
+  --accent-foreground: #ffffff;
+  --destructive: #E53935;
+  --destructive-foreground: #ffffff;
+  --success: #2E7D32;
+  --success-foreground: #ffffff;
+  --warning: #FF8F00;
+  --warning-foreground: #ffffff;
+  --info: #1E88E5;
+  --info-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #1E88E5;
+  --water-500: #1E88E5;
+  --water-400: #42A5F5;
+  --water-600: #1565C0;
+  --glass-fill-start: #A7E1FF;
+  --glass-fill-end: #42A5F5;
+  --chart-1: #1E88E5;
+  --chart-2: #42A5F5;
+  --chart-3: #00B894;
+  --chart-4: #2ECC71;
+  --chart-5: #A7E1FF;
+  --danger-soft: #FECACA;
+  --danger-soft-hover: #FCA5A5;
+  --water-goal-chart: #4ECDC4;
+  --radius: 0.75rem;
+  /* Aumentado para melhor toque mobile */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0F1724;
+  --sidebar-primary: #1E88E5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f8fafc;
+  --sidebar-accent-foreground: #0F1724;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #1E88E5;
+}
+
+/* Design system tokens (compatíveis com sugestões do release) */
+:root {
+  /* Semantic color tokens */
+  --color-bg: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--card);
+  --color-surface-foreground: var(--card-foreground);
+
+  /* Glassmorphism tokens */
+  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  --glass-bg-dark: linear-gradient(180deg, rgba(10, 14, 19, 0.55), rgba(10, 14, 19, 0.35));
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-dark: rgba(255, 255, 255, 0.04);
+
+  /* Radii hierarchy (sm/md/lg) */
+  --radius-sm: 6px;
+  /* controls */
+  --radius-md: 12px;
+  /* cards */
+  --radius-lg: 24px;
+  /* panels */
+
+  /* Spacing scale (4px step) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+
+  /* Shadows and glass blur */
+  --shadow-subtle: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --glass-blur: 10px;
+
+  /* Animation defaults (respect prefers-reduced-motion) */
+  --anim-fast: 120ms;
+  --anim-medium: 200ms;
+  --anim-long: 280ms;
+}
+
+.dark {
+  --background: #0A0E13;
+  --foreground: #F8FAFC;
+  --card: #0E1318;
+  --card-foreground: #F8FAFC;
+  --popover: #0E1318;
+  --popover-foreground: #F8FAFC;
+  --primary: #3B82F6;
+  --primary-foreground: #ffffff;
+  --secondary: #60A5FA;
+  --secondary-foreground: #ffffff;
+  --muted: #161B21;
+  --muted-foreground: #CBD5E1;
+  --accent: #10B981;
+  --accent-foreground: #ffffff;
+  --destructive: #EF4444;
+  --destructive-foreground: #ffffff;
+  --success: #22C55E;
+  --success-foreground: #ffffff;
+  --warning: #F59E0B;
+  --warning-foreground: #ffffff;
+  --info: #3B82F6;
+  --info-foreground: #ffffff;
+  --border: rgba(59, 130, 246, 0.2);
+  --input: #1E293B;
+  --input-background: #1E293B;
+  --switch-background: #475569;
+  --ring: #3B82F6;
+  --water-500: #3B82F6;
+  --water-400: #60A5FA;
+  --water-600: #2563EB;
+  --glass-fill-start: #A7E1FF;
+  --glass-fill-end: #60A5FA;
+  --chart-1: #3B82F6;
+  --chart-2: #60A5FA;
+  --chart-3: #10B981;
+  --chart-4: #22C55E;
+  --chart-5: #A7E1FF;
+  --danger-soft: #7F1D1D;
+  --danger-soft-hover: #991B1B;
+  --water-goal-chart: #4ECDC4;
+  --sidebar: #0F1419;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #3B82F6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: rgba(59, 130, 246, 0.2);
+  --sidebar-ring: #3B82F6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-soft-hover: var(--danger-soft-hover);
+  --color-water-goal-chart: var(--water-goal-chart);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  /* Aplicação forçada e imediata dos temas */
+  html,
+  html.light {
+    color-scheme: light !important;
+  }
+
+  html.dark {
+    color-scheme: dark !important;
+  }
+
+  /* Garantir aplicação imediata das variáveis de tema - LIGHT THEME */
+  html:not(.dark),
+  html.light,
+  html.light *,
+  .light,
+  .light *,
+  :root:not(.dark) {
+    --background: #ffffff !important;
+    --foreground: #0F1724 !important;
+    --card: #ffffff !important;
+    --card-foreground: #0F1724 !important;
+    --popover: #ffffff !important;
+    --popover-foreground: #0F1724 !important;
+    --muted: #E5E7EB !important;
+    --muted-foreground: #374151 !important;
+    --border: rgba(0, 0, 0, 0.1) !important;
+    --input-background: #f3f3f5 !important;
+    --switch-background: #cbced4 !important;
+  }
+
+  /* Garantir aplicação imediata das variáveis de tema - DARK THEME */
+  html.dark,
+  html.dark *,
+  .dark,
+  .dark * {
+    --background: #0A0E13 !important;
+    --foreground: #F8FAFC !important;
+    --card: #0E1318 !important;
+    --card-foreground: #F8FAFC !important;
+    --popover: #0E1318 !important;
+    --popover-foreground: #F8FAFC !important;
+    --muted: #161B21 !important;
+    --muted-foreground: #CBD5E1 !important;
+    --border: rgba(59, 130, 246, 0.2) !important;
+    --input-background: #1E293B !important;
+    --switch-background: #475569 !important;
+  }
+
+  /* Otimizações para mobile */
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* Hardware acceleration para animações */
+    transform: translate3d(0, 0, 0);
+    /* Transições suaves apenas para mudanças de tema */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    /* Safe area insets para evitar sobreposição com UI do sistema (status bar, notches, etc) */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Forçar aplicação imediata do tema claro no body */
+  html:not(.dark) body,
+  html.light body {
+    background-color: #ffffff !important;
+    color: #0F1724 !important;
+  }
+
+  /* Forçar aplicação imediata do tema escuro no body */
+  html.dark body {
+    background-color: #0A0E13 !important;
+    color: #F8FAFC !important;
+  }
+
+  /* Elementos que devem aplicar transições suaves para tema */
+  .bg-card,
+  .bg-background,
+  .bg-muted,
+  .text-foreground,
+  .text-muted-foreground,
+  .border-border {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  /* Color scheme baseado no tema atual */
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  /* Melhor toque em dispositivos móveis */
+  button,
+  [role="button"] {
+    min-height: 44px;
+    /* Área mínima de toque recomendada */
+    cursor: pointer;
+  }
+
+  /* Default button radius to match app design for buttons without explicit rounding */
+  button,
+  [role="button"] {
+    border-radius: var(--radius-sm);
+  }
+
+  /* Stronger enforcement for component buttons and slot-based buttons */
+  [data-slot="button"],
+  .btn,
+  .button {
+    border-radius: var(--radius-sm) !important;
+    overflow: hidden;
+    /* ensure background and children respect rounding */
+  }
+
+  /* Make sure inline SVG/backgrounds don't visually square the corners */
+  [data-slot="button"]>*,
+  .btn>* {
+    display: inline-block;
+    border-radius: inherit;
+  }
+
+  /* Strongest enforcement: target pseudo elements and all descendants to clip visuals */
+  [data-slot="button"],
+  [data-slot="button"] *,
+  [data-slot="button"]::before,
+  [data-slot="button"]::after {
+    border-radius: var(--radius-sm) !important;
+    -webkit-border-radius: var(--radius-sm) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-subtle) !important;
+    background-clip: padding-box !important;
+    -webkit-background-clip: padding-box !important;
+    mask-image: linear-gradient(#fff, #fff) !important;
+    -webkit-mask-image: linear-gradient(#fff, #fff) !important;
+  }
+
+  /* Otimizar scrolling em mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Viewport otimizado para smartphones */
+@media screen and (max-width: 480px) {
+  :root {
+    --font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --font-size: 16px;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  /* Impedir zoom em dispositivos móveis em campos de input */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Definir largura máxima para smartphone padrão */
+@media (min-width: 640px) {
+  .smartphone-container {
+    max-width: 428px;
+    /* iPhone 12 Pro Max width como referência */
+    margin: 0 auto;
+  }
+}
+
+/* Animações customizadas para TipsView */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+
+  100% {
+    transform: translateX(300%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+/* Liquid glass aesthetic utilities */
+.liquid-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.12);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.12);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-subtle);
+  border-radius: var(--radius-md);
+}
+
+.liquid-glass--light {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(15, 23, 36, 0.04);
+}
+
+.liquid-glass--dark {
+  background: var(--glass-bg-dark);
+  border: 1px solid var(--glass-border-dark);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+}
+
+/* Utility: responsive card padding for consistent proportions */
+.card-responsive {
+  padding: 1rem;
+  /* default */
+}
+
+@media (min-width: 640px) {
+  .card-responsive {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-responsive {
+    padding: 1.5rem;
+  }
+}
+
+/* Ensure theme pickers align nicely */
+.theme-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .theme-picker-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Apply liquid glass globally when enabled on the root element */
+.liquid-glass-enabled .bg-card,
+.liquid-glass-enabled .bg-popover,
+.liquid-glass-enabled .card-responsive,
+.liquid-glass-enabled .bg-muted,
+.liquid-glass-enabled .border-border,
+.liquid-glass-enabled .bg-background,
+.liquid-glass-enabled .fixed,
+.liquid-glass-enabled .bg-accent {
+  background-image: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.12);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.12);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-subtle);
+  transition: background-color var(--anim-medium) ease, box-shadow var(--anim-medium) ease, border-color var(--anim-medium) ease;
+}
+
+/* Dark variant adjustments */
+.liquid-glass-enabled.liquid-glass--dark .bg-card,
+.liquid-glass-enabled.liquid-glass--dark .bg-popover,
+.liquid-glass-enabled.liquid-glass--dark .card-responsive,
+.liquid-glass-enabled.liquid-glass--dark .bg-muted,
+.liquid-glass-enabled.liquid-glass--dark .border-border,
+.liquid-glass-enabled.liquid-glass--dark .bg-background,
+.liquid-glass-enabled.liquid-glass--dark .fixed,
+.liquid-glass-enabled.liquid-glass--dark .bg-accent {
+  background-image: var(--glass-bg-dark);
+  border: 1px solid var(--glass-border-dark);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+}
+
+/* Make sure bottom navigation gets subtle glass when fixed */
+.liquid-glass-enabled .fixed.bottom-0.inset-x-0 {
+  /* specific to bottom nav */
+  background-clip: padding-box;
+}
+
+/* Utility glass class with fallback for browsers without backdrop-filter */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.12);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.12);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-subtle);
+  border-radius: var(--radius-md);
+}
+
+.glass--sm {
+  border-radius: var(--radius-sm);
+}
+
+.glass--md {
+  border-radius: var(--radius-md);
+}
+
+.glass--lg {
+  border-radius: var(--radius-lg);
+}
+
+/* Fallback: if backdrop-filter is not supported, use semi-transparent fill */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+
+  .glass,
+  .liquid-glass,
+  .liquid-glass-enabled .bg-card,
+  .liquid-glass-enabled .bg-popover {
+    background: color-mix(in srgb, var(--color-surface) 85%, transparent);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Accessibility respects */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --glass-border: color-mix(in srgb, var(--color-foreground) 30%, transparent);
+    --glass-border-dark: color-mix(in srgb, var(--color-foreground) 20%, transparent);
+  }
+}
+
+/* Mobile-app look: hide native scrollbars but keep scrolling functional */
+/* This gives a more 'app-like' fullscreen experience while preserving accessibility. */
+html,
+body,
+.smartphone-container {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.smartphone-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+/* If hiding scrollbars is undesirable on some platforms, the following thumb styling can be used
+   instead. Uncomment to style rather than hide. */
+/*
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 8px; }
+*/
+
+/* Default rounding for container-like elements to keep visual coherence */
+/* Targets common app containers (cards, popovers, muted blocks, glass panels) */
+section,
+article,
+aside,
+nav,
+header,
+footer,
+.card-responsive,
+.glass,
+.liquid-glass,
+div[class*="bg-"],
+.bg-card,
+.bg-popover,
+.bg-muted,
+.bg-background {
+  border-radius: var(--radius-md) !important;
+}
+
+/* Keep form controls and interactive elements as authored (avoid forcing radius) */
+input,
+textarea,
+select,
+button {
+  border-radius: inherit;
+  /* respect existing component styles */
+}

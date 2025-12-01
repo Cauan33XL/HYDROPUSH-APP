@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                    // compatível com browsers modernos
+    "module": "ESNext",                     // usado pelo Vite
+    "lib": ["DOM", "ES2022"],               // suporte a APIs modernas e DOM
+    "moduleResolution": "bundler",          // necessário para Vite
+    "jsx": "react-jsx",                      // JSX moderno React 18+
+    "strict": true,                          // ativa todas as checagens TS
+    "esModuleInterop": true,                 // compatibilidade com libs comuns
+    "allowSyntheticDefaultImports": true,    // suporte a import padrão
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,                    // ignora libs externas problemáticas
+    "resolveJsonModule": true,               // permite importar .json
+    "isolatedModules": true,                 // necessário para Vite/ESNext
+    "noEmit": true                           // não gerar arquivos .js
+  },
+  "include": ["src", "vite.config.ts"],      // olha todo o código do projeto
+  "exclude": ["node_modules", "dist"]        // ignora libs e build
+}

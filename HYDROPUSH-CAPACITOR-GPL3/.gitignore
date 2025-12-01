@@ -1,0 +1,78 @@
+# ===================================
+# HYDROPUSH - Proteção de Segurança
+# ===================================
+
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+# Arquivos de Ambiente (CRÍTICO - NUNCA COMMITAR)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build e Distribuição
+build/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+
+# Capacitor - Builds Gerados
+android/app/build/
+android/app/release/
+android/.gradle/
+android/build/
+android/local.properties
+android/gradle.properties
+ios/App/Podfile.lock
+ios/App/Pods/
+.capacitor/
+
+# IDEs e Editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Testes
+coverage/
+.nyc_output/
+*.lcov
+
+# Arquivos temporários e de debug
+grep_output.txt
+build_output.txt
+deploy_output.txt
+version.txt
+npx_version.txt
+migrate.txt
+
+
+# Sistema Operacional
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.Spotlight-V100
+.Trashes
+
+# Misc
+*.bak
+*.tmp
+*.temp
+android/key.properties
+android/*.jks

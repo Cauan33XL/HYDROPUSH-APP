@@ -1,0 +1,25 @@
+// Arquivo usado pelo Appflow para builds extras
+// Seguro para Android e Web builds Capacitor
+
+// Só aplica o bloco android se o plugin Android estiver presente
+if (project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')) {
+    android {
+        // Aqui você pode adicionar overrides se precisar
+        compileSdkVersion rootProject.ext.compileSdkVersion
+        defaultConfig {
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+        }
+
+        buildTypes {
+            debug {}
+            release {}
+        }
+
+        // Opcional: se precisar de proguard
+        // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+} else {
+    // Caso seja build Web, não faz nada
+    println("Android plugin não detectado, pulando bloco android()")
+}
