@@ -9,10 +9,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:all": "vite build && cd hydropush-capacitor && npx cap sync android",
+    "watch": "vite build --watch",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "cap:sync": "npm run cap:sync -w hydropush-capacitor",
+    "cap:copy": "npm run cap:copy -w hydropush-capacitor",
     "cap:open": "npm run cap:open -w hydropush-capacitor",
-    "android": "npm run build && npm run cap:sync && npm run cap:open"
+    "android": "npm run build:all && npm run cap:open",
+    "dev:android": "vite --host & cd hydropush-capacitor && npx cap run android -l --external"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.4",

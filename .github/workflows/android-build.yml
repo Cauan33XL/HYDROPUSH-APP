@@ -14,7 +14,6 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      # 👇 AQUI ESTAVA O ERRO. MUDEI PARA JAVA 21
       - name: Configurar Java 21
         uses: actions/setup-java@v4
         with:
@@ -27,24 +26,25 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Instalar Dependências e Build Web
-        run: |
-          npm ci
-          npm run build
+      - name: Instalar Dependências
+        run: npm ci
+
+      - name: Build Web (React)
+        run: npm run build
 
       - name: Sincronizar Capacitor
+        working-directory: hydropush-capacitor
         run: npx cap sync android
-      
+
       - name: Dar permissão de execução ao Gradle
-        run: chmod +x android/gradlew
+        run: chmod +x hydropush-capacitor/android/gradlew
 
       - name: Gerar APK (Debug)
-        run: |
-          cd android
-          ./gradlew assembleDebug --warning-mode all
+        working-directory: hydropush-capacitor/android
+        run: ./gradlew assembleDebug --warning-mode all
 
       - name: Upload do APK (Artifact)
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: hydropush-capacitor/android/app/build/outputs/apk/debug/app-debug.apk
