@@ -34,6 +34,7 @@ export default defineConfig({
     emptyOutDir: true,
     chunkSizeWarningLimit: 600,
     rollupOptions: {
+      external: ['@capacitor/core', '@capacitor/haptics', '@capacitor/status-bar', '@capacitor/preferences', '@capacitor/push-notifications'],
       output: {
         manualChunks: (id: string) => {
           if (id.includes('node_modules')) return 'vendor';

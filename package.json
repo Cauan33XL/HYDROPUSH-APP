@@ -2,6 +2,7 @@
   "name": "hydropush-app-monorepo",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "hydropush-react",
     "hydropush-capacitor"
@@ -23,6 +24,18 @@
     "@types/node": "^20.19.25",
     "eslint": "^9.39.1",
     "typescript": "^5.7.0",
+    "vercel": "^54.1.0",
     "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "@capacitor/app": "^7.1.2",
+    "@capacitor/core": "^7.6.5",
+    "@capacitor/haptics": "^7.0.5",
+    "@capacitor/local-notifications": "^7.0.6",
+    "@capacitor/preferences": "^7.0.4",
+    "@capacitor/push-notifications": "^7.0.6",
+    "@capacitor/splash-screen": "^7.0.5",
+    "@capacitor/status-bar": "^7.0.6",
+    "@vercel/analytics": "^2.0.1"
   }
 }
