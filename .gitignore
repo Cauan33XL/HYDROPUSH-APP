@@ -76,3 +76,5 @@ $RECYCLE.BIN/
 *.temp
 android/key.properties
 android/*.jks
+.vercel
+.env*.local

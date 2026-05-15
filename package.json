@@ -17,7 +17,8 @@
     "cap:copy": "npm run cap:copy -w hydropush-capacitor",
     "cap:open": "npm run cap:open -w hydropush-capacitor",
     "android": "npm run build:all && npm run cap:open",
-    "dev:android": "vite --host & cd hydropush-capacitor && npx cap run android -l --external"
+    "dev:android": "vite --host & cd hydropush-capacitor && npx cap run android -l --external",
+    "deploy": "vercel --prod"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.4",
