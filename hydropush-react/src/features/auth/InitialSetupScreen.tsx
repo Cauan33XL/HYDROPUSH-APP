@@ -463,37 +463,9 @@ export function InitialSetupScreen({ onComplete, error: externalError }: Initial
   };
 
   return (
-    <div className="min-h-[100dvh] bg-gradient-to-br from-background via-blue-50/30 to-cyan-50/30 dark:from-background dark:via-blue-950/20 dark:to-cyan-950/20 flex items-center justify-center p-4 sm:p-6 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-background flex items-center justify-center p-6">
       <motion.div
-        className="w-full max-w-md relative z-10 flex flex-col max-h-[100dvh] overflow-y-auto"
+        className="w-full max-w-md flex flex-col"
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

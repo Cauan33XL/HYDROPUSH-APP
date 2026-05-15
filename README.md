@@ -2,30 +2,56 @@
 
 ![License](https://img.shields.io/badge/license-GPLv3-blue.svg) ![Status](https://img.shields.io/badge/status-active-success.svg)
 
-Hydropush é um projeto Monorepo GPL3 de um App que unifica múltiplas implementações (Capacitor, Expo, Cordova e React Web) de um aplicativo para controle de hidratação diária. O sistema é totalmente offline, oferecendo suporte a temas claro e escuro, lembretes personalizados e persistência de dados local, garantindo o funcionamento completo Offline.
+Hydropush é um aplicativo para controle de hidratação diária, desenvolvido com tecnologias web modernas. O sistema é totalmente offline, oferecendo suporte a temas claro e escuro, lembretes personalizados e persistência de dados local.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
-Este repositório contém diferentes versões do Hydropush, cada uma utilizando uma estratégia técnica distinta:
+Este repositório está organizado em dois módulos principais:
 
-| Versão | Stack Tecnológica | Descrição |
-| :--- | :--- | :--- |
-| **[HYDROPUSH-CAPACITOR](./HYDROPUSH-CAPACITOR-GPL3)** | React Web + Capacitor | Versão moderna com integração Firebase e Preferences nativas. |
-| **[HYDROPUSH-EXPO](./HYDROPUSH-EXPO-GPL3)** | React Native + Expo | Versão com renderização nativa e StorageService. |
-| **[HYDROPUSH-CORDOVA](./HYDROPUSH-CORDOVA-GPL3)** | React Web + Cordova | Versão híbrida clássica focada em compatibilidade. |
-| **[HYDROPUSH-REACT](./HYDROPUSH-REACT-GPL3)** | React Web (SPA) | Versão PWA para navegadores. |
-| **[HYDROPUSH-LITE](./HYDROPUSH-LITE-GPL3)** | Web Minimalista | Versão leve e simplificada. |
+*   **[hydropush-react](./hydropush-react)**: Contém o código-fonte da aplicação Web (React + Vite + Tailwind CSS).
+*   **[hydropush-capacitor](./hydropush-capacitor)**: Contém a configuração do Capacitor e os ativos para a versão mobile (Android).
 
 ---
 
-## 🚀 Funcionalidades Principais
+## 🛠️ Tecnologias Utilizadas
 
-* **Offline-First:** Funciona sem conexão com a internet.
-* **Temas:** Suporte nativo a Light Mode e Dark Mode.
-* **Lembretes:** Sistema de notificações para beber água.
-* **Privacidade:** Dados armazenados localmente no dispositivo.
+*   **Linguagem**: [TypeScript](https://www.typescriptlang.org/)
+*   **Frontend**: [React](https://react.dev/)
+*   **Build Tool**: [Vite](https://vitejs.dev/)
+*   **Mobile Runtime**: [Capacitor](https://capacitorjs.com/)
+*   **Estilização**: [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### 1. Instalação das Dependências
+Abra o terminal na raiz do projeto e execute:
+```bash
+npm install
+```
+
+### 2. Executar em Modo Web (Desenvolvimento)
+```bash
+npm run dev
+```
+O aplicativo geralmente estará disponível em: `http://localhost:5173`
+
+### 3. Sincronizar com o Capacitor (Android)
+```bash
+# Gere o build web primeiro
+npm run build
+
+# Sincronize com o projeto mobile
+npm run cap:sync
+```
+
+Para abrir o projeto no Android Studio:
+```bash
+npx cap open android
+```
 
 ---
 

@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
+  root: 'hydropush-react',
   base: '/', 
   plugins: [react()],
   resolve: {
@@ -24,16 +25,17 @@ export default defineConfig({
       'embla-carousel-react@8.6.0': 'embla-carousel-react',
       'cmdk@1.1.1': 'cmdk',
       'class-variance-authority@0.7.1': 'class-variance-authority',
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './hydropush-react/src'),
     },
   },
   build: {
     target: 'es2020',
-    outDir: 'build',
+    outDir: '../build',
+    emptyOutDir: true,
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
+        manualChunks: (id: string) => {
           if (id.includes('node_modules')) return 'vendor';
         },
       },

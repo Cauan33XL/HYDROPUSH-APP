@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["../hydropush-react/src/*"]
+    }
+  },
+  "include": [
+    "capacitor.config.ts"
+  ]
+}

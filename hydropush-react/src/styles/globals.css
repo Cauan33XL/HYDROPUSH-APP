@@ -253,6 +253,17 @@
   }
 
   /* Otimizações para mobile */
+  html,
+  body {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
@@ -265,9 +276,6 @@
     transform: translate3d(0, 0, 0);
     /* Transições suaves apenas para mudanças de tema */
     transition: background-color 0.2s ease, color 0.2s ease;
-    /* Safe area insets para evitar sobreposição com UI do sistema (status bar, notches, etc) */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
   }
 
   /* Forçar aplicação imediata do tema claro no body */
